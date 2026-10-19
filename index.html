@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Couple Bingo — five in a row for us</title>
+  <meta name="description" content="A little bingo card made of moments we love — tap the squares, get five in a row, and keep the card as a picture.">
+  <meta property="og:title" content="Couple Bingo — five in a row for us">
+  <meta property="og:description" content="A little bingo card made of moments we love — tap the squares, get five in a row, and keep the card as a picture.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#090b20">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="bingo">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://menaammarpro.github.io/">All projects</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Letters</a>
+      <a href="index.html" class="active">Bingo</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Two players &middot; one card</p>
+      <h1>Couple <span>bingo</span></h1>
+      <p class="subtitle">A card full of small things we love. Tap a square every
+        time it happens, and shout bingo when five line up.</p>
+    </section>
+
+    <section class="stats-row" aria-label="Card progress">
+      <div class="stat-card">
+        <span class="stat-num" id="stat-bingos">0</span>
+        <span class="stat-label">bingos</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-marked">0</span>
+        <span class="stat-label">squares ticked</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-lines">12</span>
+        <span class="stat-label">lines to go</span>
+      </div>
+    </section>
+
+    <section class="panel board-panel">
+      <h2 class="board-heading">Our card</h2>
+      <p id="bingo-banner" class="bingo-banner" role="status" aria-live="polite" hidden></p>
+      <div id="bingo-grid" class="bingo-grid" role="grid" aria-label="Bingo card"></div>
+      <div class="board-controls">
+        <button id="btn-new" class="button button-primary" type="button">New card</button>
+        <button id="btn-clear" class="button button-ghost" type="button">Clear marks</button>
+        <button id="btn-edit" class="button button-ghost" type="button">Edit squares</button>
+        <button id="btn-save" class="button button-ghost" type="button">Save as picture</button>
+      </div>
+      <p id="board-note" class="board-note" aria-live="polite">&nbsp;</p>
+    </section>
+
+    <section class="panel info-panel">
+      <h2>A few little rules</h2>
+      <ul>
+        <li><strong>Tap</strong> a square when it happens to you two. The middle is always free &mdash; that one is us.</li>
+        <li><strong>Five in a row</strong> &mdash; across, down or corner to corner &mdash; is a bingo.</li>
+        <li><strong>Edit squares</strong> swaps every square for a text box, so you can write your own moments. Changes save as you type.</li>
+        <li><strong>New card</strong> shuffles the squares you wrote and keeps them; <strong>Clear marks</strong> only wipes the ticks.</li>
+        <li><strong>Save as picture</strong> makes a shareable image of your finished card.</li>
+      </ul>
+    </section>
+
+    <section class="panel reset-panel">
+      <h2>Fresh start each day</h2>
+      <label class="switch">
+        <input type="checkbox" id="auto-reset">
+        <span>Clear the ticks when a new day begins</span>
+      </label>
+      <p id="reset-info" class="board-note">&nbsp;</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with love, just for you <span aria-hidden="true">&#9829;</span></p>
+    <p class="footer-small">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
+  </footer>
+
+  <canvas id="share-canvas" width="1080" height="1080" hidden></canvas>
+
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
