@@ -144,6 +144,9 @@ assert(mixed.slice().sort().join('|') === NS.DEFAULT_SQUARES.slice().sort().join
 /* ---- dates ---- */
 eq(NS.todayStr(new Date(2026, 0, 5)), '2026-01-05', 'todayStr pads month and day');
 eq(NS.todayStr(new Date(2030, 11, 31)), '2030-12-31', 'todayStr handles December');
+eq(NS.todayStr('2026-01-05'), '2026-01-05', 'todayStr passes an ISO day string through');
+eq(NS.todayStr('not a day'), NS.todayStr(), 'todayStr ignores a non-date string');
+assert(NS.needsReset({ autoReset: true, lastReset: '2026-01-01' }, '2026-01-02') === true, 'daily reset understands a string day');
 
 /* ---- state shapes ---- */
 const es = NS.emptyState(new Date(2026, 0, 2));
