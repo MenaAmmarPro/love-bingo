@@ -159,6 +159,7 @@
   }
 
   function todayStr(date) {
+    if (typeof date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
     var d = date instanceof Date ? date : new Date();
     var m = d.getMonth() + 1;
     var day = d.getDate();
