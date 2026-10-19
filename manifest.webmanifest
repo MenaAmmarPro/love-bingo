@@ -1,0 +1,12 @@
+{
+  "name": "Couple Bingo — five in a row for us",
+  "short_name": "Couple Bingo",
+  "description": "A little bingo card made of moments we love — tap the squares, get five in a row, and keep the card as a picture.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#090b20",
+  "theme_color": "#090b20",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
